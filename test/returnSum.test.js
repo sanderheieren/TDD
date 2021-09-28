@@ -25,6 +25,9 @@ class Math {
     remainder(a,b) {
         return b != 0 ? a % b : "NO";
     }
+    calcAge(age) {
+        this.value = age*365;
+    }
 
 }
 
@@ -42,8 +45,6 @@ class ArrayFunctions {
         return this.list[0]
     }
 }
-
-getFirstValue = (arr) => arr[0]
 
 describe('math operations', () => {
 
@@ -78,6 +79,11 @@ describe('math operations', () => {
     it('can find remainder', () => {
         expect(math.remainder(-9, 45)).toBe(-9)
         expect(math.remainder(-9, 0)).toBe('NO')
+    })
+
+    it('find age in days', () => {
+        math.calcAge(50)
+        expect(math.value).toBe(50*365)
     })
 
 })
